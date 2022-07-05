@@ -1,11 +1,12 @@
-# Write a Python program to find the title tags from a given html document
-
 import requests
 from bs4 import BeautifulSoup
 
 def getIntoHtml(url):
     res = requests.get(url)
     return res.text
+
+
+# Write a Python program to find the title tags from a given html document
 
 soup = BeautifulSoup(getIntoHtml('https://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Accueil_principal'), 'html.parser')
 print(soup.find("title"))
@@ -41,7 +42,10 @@ soup = BeautifulSoup(getIntoHtml('https://fr.wikipedia.org/wiki/Wikip%C3%A9dia:A
 print(soup.find_all('a')[0].text)
 
 
-#Write a Python program to find the href of the first <a> tag of a given html document.
+# Write a Python program to find the href of the first <a> tag of a given html document.
 
 soup = BeautifulSoup(getIntoHtml('https://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Accueil_principal'), 'html.parser')
 print(soup.find('a').attrs['href'])
+
+#  Write a Python program to extract all the URLs from the webpage python.org that are nested within <li> tags from
+
