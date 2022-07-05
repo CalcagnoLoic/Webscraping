@@ -72,6 +72,35 @@ print("=========================================================================
 
 # Write a Python program to create a Beautiful Soup parse tree into a nicely formatted Unicode string, with a separate line for each HTML/XML tag and string
 
-soup = BeautifulSoup(getIntoHtml('https://www.python.org/'), 'html.parser')
+soup = BeautifulSoup(getIntoHtml('https://pyscript.net/'), 'html.parser')
+print(soup)
+print(soup.prettify())
+print("============================================================================================================")
 
+
+# Write a Python program to find the first tag with a given attribute value in an html document
+
+soup = BeautifulSoup(getIntoHtml('https://python.org/'), 'html.parser')
+print(soup.find(href='/dev/peps/peps.rss'))
+print("============================================================================================================")
+
+
+# Write a Python program to find tag(s) beneath other tag(s) in a given html document
+
+soup = BeautifulSoup(getIntoHtml('https://python.org/'), 'html.parser')
+print(soup.select("html meta"))
+print("============================================================================================================")
+
+
+# Write a Python program to find tag(s) directly beneath other tag(s) in a given html document
+
+soup = BeautifulSoup(getIntoHtml('https://python.org/'), 'html.parser')
+print(soup.select("p > a"))
+print("============================================================================================================")
+
+
+# Write a Python program to find the siblings of tags in a given html document
+
+soup = BeautifulSoup(getIntoHtml('https://python.org/'), 'html.parser')
+print(soup.select("#nojs ~ .do-not-print"))
 print("============================================================================================================")
